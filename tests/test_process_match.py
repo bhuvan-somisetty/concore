@@ -30,7 +30,7 @@ class TestHasConcoreMarkers:
         ["concore.hpp", "concore.java", "concore.v", "concore_read.m"],
     )
     def test_true_for_non_python_nodes(self, tmp_path, runtime_file):
-        # C++, Java, Verilog and MATLAB nodes never get concore.py (#615)
+        # C++, Java, Verilog and MATLAB nodes never get concore.py
         (tmp_path / "concore.iport").write_text("{}")
         (tmp_path / runtime_file).write_text("")
         assert has_concore_markers(str(tmp_path)) is True
